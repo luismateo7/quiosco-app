@@ -17,12 +17,10 @@ const QuioscoProvider = ({children})=> {
         obtenerCategorias()
     }, [])
 
-
     const obtenerCategorias = async ()=>{
         const { data } = await axios ('/api/categorias')
         setCategorias(data)
     }
-
 
     const handleClickCategoria = id =>{
         const categoria = categorias?.filter( categoriaState => categoriaState.id === id)
@@ -47,7 +45,7 @@ const QuioscoProvider = ({children})=> {
                 producto,
                 handleSetProducto,
                 modal,
-                handleChangeModal
+                handleChangeModal,
             }}
         >
             {children}
